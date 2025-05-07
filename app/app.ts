@@ -2,6 +2,7 @@ import Application from '@ember/application';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
 import config from 'pass-admin-ui/config/environment';
+import 'pass-admin-ui/app.css';
 
 export default class App extends Application {
   modulePrefix = config.modulePrefix;

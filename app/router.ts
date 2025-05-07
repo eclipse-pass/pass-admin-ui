@@ -8,4 +8,8 @@ export default class Router extends EmberRouter {
 
 Router.map(function () {
   // Add route declarations here
+  this.route('dashboard');
+  this.route('submissions');
+  this.route('submission', { path: '/submissions/:submission_id' });
+  this.route('reports');
 });
