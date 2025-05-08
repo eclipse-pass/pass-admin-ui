@@ -20,7 +20,7 @@ export default Factory.extend({
   // Associations
   publication: association(),
 
-  afterCreate(submission, server) {
+  afterCreate(submission: any, server: any) {
     server.createList('grant', 1, { submission });
     console.log('Created submission:', submission.attrs);
   },

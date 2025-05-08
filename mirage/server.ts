@@ -1,23 +1,42 @@
 import { createServer } from 'miragejs';
-import { discoverEmberDataModels } from 'ember-cli-mirage';
 
-import Submission from './models/submission';
-import Publication from './models/publication';
 import ApplicationSerializer from './serializers/application';
-import SubmissionSerializer from './serializers/submission';
+import submissionModel from './models/submission';
+import publicationModel from './models/publication';
+import grantModel from './models/grant';
+import repositoryModel from './models/repository';
+import funderModel from './models/funder';
+
+import funderFactory from './factories/funder';
+import submissionFactory from './factories/submission';
+import publicationFactory from './factories/publication';
+import grantFactory from './factories/grant';
+import repositoryFactory from './factories/repository';
+
+import defaultScenario from './scenarios/default';
 
 export default function (config) {
   let finalConfig = {
     ...config,
     models: {
-      ...discoverEmberDataModels(config.store),
-      ...config.models,
+      submission: submissionModel,
+      publication: publicationModel,
+      grant: grantModel,
+      repository: repositoryModel,
+      funder: funderModel,
     },
     serializers: {
       application: ApplicationSerializer,
-      // submission: SubmissionSerializer,
-      // publication: PublicationSerializer,
-      // Add other serializers if needed
+    },
+    factories: {
+      funder: funderFactory,
+      submission: submissionFactory,
+      publication: publicationFactory,
+      grant: grantFactory,
+      repository: repositoryFactory,
+    },
+    scenarios: {
+      default: defaultScenario,
     },
     routes() {
       // Publications
