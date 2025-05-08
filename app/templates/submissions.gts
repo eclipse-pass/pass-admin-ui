@@ -1,4 +1,3 @@
-import RouteTemplate from 'ember-route-template';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
@@ -15,7 +14,7 @@ interface SubmissionsRouteSignature {
   };
 }
 
-class SubmissionsComponent extends Component<SubmissionsRouteSignature> {
+export default class SubmissionsComponent extends Component<SubmissionsRouteSignature> {
   @service declare router: RouterService;
 
   @tracked filterStatus: string | null = null;
@@ -292,5 +291,3 @@ class SubmissionsComponent extends Component<SubmissionsRouteSignature> {
     </div>
   </template>
 }
-
-export default RouteTemplate(SubmissionsComponent);

@@ -1,4 +1,4 @@
-import RouteTemplate from 'ember-route-template';
+import Component from '@glimmer/component';
 import Layout from 'pass-admin-ui/components/layout';
 import { pageTitle } from 'ember-page-title';
 
@@ -8,7 +8,7 @@ interface ApplicationRouteSignature {
   };
 }
 
-export default RouteTemplate<ApplicationRouteSignature>(
+export default class ApplicationComponent extends Component<ApplicationRouteSignature> {
   <template>
     {{pageTitle "PassAdminUi"}}
 
@@ -16,4 +16,4 @@ export default RouteTemplate<ApplicationRouteSignature>(
       {{outlet}}
     </Layout>
   </template>
-);
+}

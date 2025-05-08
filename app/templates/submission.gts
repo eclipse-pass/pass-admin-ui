@@ -1,4 +1,3 @@
-import RouteTemplate from 'ember-route-template';
 import Component from '@glimmer/component';
 import { LinkTo } from '@ember/routing';
 
@@ -8,7 +7,7 @@ interface SubmissionsRouteSignature {
   };
 }
 
-class SubmissionsDetailComponent extends Component<SubmissionsRouteSignature> {
+export default class SubmissionsDetailComponent extends Component<SubmissionsRouteSignature> {
   placeholder = 'hi';
   <template>
     <div class="px-4 sm:px-6 lg:px-8">
@@ -379,5 +378,3 @@ class SubmissionsDetailComponent extends Component<SubmissionsRouteSignature> {
     </div>
   </template>
 }
-
-export default RouteTemplate(SubmissionsDetailComponent);

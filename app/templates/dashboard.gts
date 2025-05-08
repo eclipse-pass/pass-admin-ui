@@ -1,4 +1,3 @@
-import RouteTemplate from 'ember-route-template';
 import Component from '@glimmer/component';
 
 interface SubmissionsRouteSignature {
@@ -7,8 +6,7 @@ interface SubmissionsRouteSignature {
   };
 }
 
-class DashboardComponent extends Component<SubmissionsRouteSignature> {
-  placeholder = 'hi';
+export default class DashboardComponent extends Component<SubmissionsRouteSignature> {
   <template>
     <h2 class="text-xl font-semibold text-gray-900 mb-4">Dashboard</h2>
 
@@ -284,5 +282,3 @@ class DashboardComponent extends Component<SubmissionsRouteSignature> {
     </div>
   </template>
 }
-
-export default RouteTemplate(DashboardComponent);

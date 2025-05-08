@@ -1,4 +1,3 @@
-import RouteTemplate from 'ember-route-template';
 import Component from '@glimmer/component';
 import SubmissionsChart from 'pass-admin-ui/components/submissions-chart';
 import GrantsChart from 'pass-admin-ui/components/grants-chart';
@@ -10,7 +9,7 @@ interface ReportsComponentSignature {
   };
 }
 
-class ReportsComponent extends Component<ReportsComponentSignature> {
+export default class ReportsComponent extends Component<ReportsComponentSignature> {
   //@ts-expect-error
   submissions = this.args.submissions;
   //@ts-expect-error
@@ -34,5 +33,3 @@ class ReportsComponent extends Component<ReportsComponentSignature> {
     </div>
   </template>
 }
-
-export default RouteTemplate(ReportsComponent);
